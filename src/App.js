@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+
+import "./App.css";
+import Headertwo from "./Components/Headertwo";
+import Header from "./Components/Header";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { Routes } from 'react-router-dom';
+import PersonalBanking from "./Components/PersonalBanking";
+import featureone from './featureone.png'
+import Footer from "./Components/Footer";
+import { NavLink } from "react-bootstrap";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+      <Header />
+     
+    
+              
+            
+
+      <Routes>
+      <Route element={<Headertwo />} path="/" />
+          <Route element={<PersonalBanking />} path="/savings" />
+          <Route element={<PersonalBanking />} path="/savingplus" />
+          <Route element={<PersonalBanking />} path="/taxfreesavings" />
+          <Route element={<PersonalBanking />} path="/help_inpersonalbanking" />
+          
+</Routes>
+             
+</Router>
+<Footer />
     </div>
   );
 }
